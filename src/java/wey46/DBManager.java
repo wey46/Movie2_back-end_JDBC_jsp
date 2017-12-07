@@ -57,7 +57,7 @@ public class DBManager {
 		return null;
 	    }
 	}
-                    System.out.println("getConnection != null");
+                    //System.out.println("getConnection != null");
 	    return conn;
     }
 

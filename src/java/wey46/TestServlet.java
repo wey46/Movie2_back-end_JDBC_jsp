@@ -56,12 +56,15 @@ public class TestServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("<RecMovieInfo>");
         for(int i=0;i<recMovies.size();i++){
-            out.println("<movie>");
-            out.println("<movieid>"+recMovies.get(i).getID()+"</movieid>");
-            out.println("<name>"+recMovies.get(i).getTitle()+"</name>");
-            out.println("<posterh>"+recMovies.get(i).getPoster()[0]+"</posterh>");
-            out.println("<posterv>"+recMovies.get(i).getPoster()[1]+"</posterv>");
-            out.println("</movie>");
+            out.print("<movie>");
+            out.print("<movieid>"+recMovies.get(i).getID()+"</movieid>");
+            out.print("<title>"+recMovies.get(i).getTitle()+"</title>");
+            out.print("<year>"+recMovies.get(i).getReleaseDate()+"</year>");
+            out.print("<posterh>"+recMovies.get(i).getPoster()[0]+"</posterh>");
+            out.print("<posterv>"+recMovies.get(i).getPoster()[1]+"</posterv>");
+            out.print("<duration>"+recMovies.get(i).getMinutes()+"</duration>");
+            out.print("<overview>"+recMovies.get(i).getOverview()+"</overview>");
+            out.print("</movie>");
         }
         out.println("</RecMovieInfo>");
         DBManager.getInstance().close();

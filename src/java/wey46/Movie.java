@@ -19,6 +19,7 @@ public class Movie {
     private String posterv;
     private String posterh;
     private int minutes;
+    private String overview;
 
     public Movie (String MovieId, String Name) {
         //testCase, only id and name
@@ -34,15 +35,13 @@ public class Movie {
         posterv = urlv;
     }
 
-    public Movie (String anID, String aTitle, String aYear, String theGenres, String aDirector,
-    String aCountry, String Posterv, String Posterh, int theMinutes) {
+    public Movie (String anID, String aTitle, int aYear,
+    String overview, String Posterv, String Posterh, int theMinutes) {
         // ideal movie database
         id = anID.trim();
         title = aTitle.trim();
-        year = Integer.parseInt(aYear.trim());
-        genres = theGenres;
-        director = aDirector;
-        country = aCountry;
+        year = aYear;
+        this.overview = overview;
         posterv = Posterv;
         posterh = Posterh;
         minutes = theMinutes;
@@ -59,8 +58,8 @@ public class Movie {
     }
 
     // Returns year in which this item was published
-    public int getYear () {
-        return year;
+    public String getReleaseDate () {
+        return Integer.toString(year);
     }
 
     // Returns genres associated with this item
@@ -83,10 +82,13 @@ public class Movie {
     public int getMinutes(){
         return minutes;
     }
+    public String getOverview(){
+        return overview.length()==0? "Overview not available":overview;
+    }
 
     // Returns a string of the item's information
     public String toString () {
-        String result = "Movie [id=" + id + ", title=" + title + ", year=" + year;
+        String result = "Movie [id=" + id + ", title=" + title + ", Year=" + year;
         result += ", genres= " + genres + "]";
         return result;
     }

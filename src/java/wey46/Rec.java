@@ -20,7 +20,7 @@ public class Rec {
     
     public static ArrayList<Movie> getRec(ArrayList<Rating> list, int howmany) throws SQLException{
         ArrayList<Movie> recMovie = new ArrayList<Movie>();
-        String sql = "SELECT MovieId,Name,PosterUrlHori,PosterUrlVert FROM Movies WHERE MovieId = ?";
+        String sql = "SELECT Name,year(ReleaseDate) as yr,Duration,PosterUrlHori,PosterUrlVert,Overview FROM Movies WHERE MovieId = ?";
 	ResultSet rs = null;
         try (
             Connection conn = DBManager.getInstance().getConnection();
@@ -31,7 +31,8 @@ public class Rec {
                 stmt.setString(1, movieId);
 	        rs = stmt.executeQuery();
 	        if (rs.next()) {
-		    Movie m = new Movie(movieId, rs.getString("Name"), rs.getString("PosterUrlHori"), rs.getString("PosterUrlVert"));
+		    Movie m = new Movie(movieId, rs.getString("Name"), rs.getInt("yr"), rs.getString("Overview"),
+                            rs.getString("PosterUrlHori"), rs.getString("PosterUrlVert"),rs.getInt("Duration"));
 		    recMovie.add(m);
 	        }
             }
