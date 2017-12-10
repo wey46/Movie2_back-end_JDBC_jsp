@@ -13,6 +13,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="RecPageSS.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Recommendations</title>
         <% String UserId = request.getParameter("UserId");%> 
         <script type="text/javascript">
@@ -63,15 +64,18 @@
                         img.setAttribute("src", psrc);
 
                         var mvtt = document.createElement("h4");//title
-                        mvtt.appendChild(document.createTextNode(mtitle));
+                        var icon = document.createElement("i");
+                        icon.setAttribute("class","fa fa-camera-retro fa-lg");
+                        mvtt.appendChild(icon);
+                        mvtt.appendChild(document.createTextNode(" "+mtitle));
                         var mvinfo = document.createElement("p");//yaer+duration
                         mvinfo.appendChild(document.createTextNode("Released: " + myear));
                         var md = document.createElement("p");
-                        md.appendChild(document.createTextNode("Duration: " + mduration));
+                        md.appendChild(document.createTextNode("Duration: " + mduration+ " min"));
                         //overview+link
                         var hid = document.createElement("div");
                         hid.setAttribute("class", "overlay");
-                        var hidtx = document.createElement("div");
+                        var hidtx = document.createElement("span");
                         hidtx.setAttribute("class","text");
                         hidtx.appendChild(document.createTextNode(moverview));
                         hid.appendChild(hidtx);
@@ -100,3 +104,7 @@
         </div>
     </body>
 </html>
+<!--
+display: flex;
+justify-content: center; /* align horizontal */
+align-items: center; -->
