@@ -1,0 +1,135 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 6, 2017, 9:19:50 PM
+    Author     : WY
+*/
+.header {
+    background: url("Header.jpg");
+    height: 500px;
+    width: 100%;
+    font-weight: bold;
+}
+#its {
+    position: absolute;
+    left: 120px;
+    top: 110px;
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    content: "It's";
+    color: #aa2979;
+    transform: rotate(-15deg);
+    transform-origin: top left;
+    font-size: 75px;
+}
+
+#mvtime {
+    position: absolute;
+    left:200px;
+    top: 150px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 100px;
+    color: white;
+}
+body {
+    background: url(http://subtlepatterns.com/patterns/scribble_light.png) ;
+    margin: 0px auto;
+}
+
+body h1 {
+    margin: 0;
+}
+#wrapper {
+    width: 90%;
+    max-width: 1100px;
+    min-width: 800px;
+    margin: 50px auto;
+}
+
+#columns {
+    -webkit-column-count: 2;
+    -webkit-column-gap: 10px;
+    -webkit-column-fill: auto;
+    -moz-column-count: 2;
+    -moz-column-gap: 10px;
+    -moz-column-fill: auto;
+    column-count: 2;
+    column-gap: 15px;
+    column-fill: auto;
+}
+
+.box {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #FEFEFE;
+    border: 2px solid #FAFAFA;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    margin: 0 0px 15px;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    padding: 15px;
+    background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+    opacity: 1;
+
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.box img {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+
+.box p {
+    font: 12px/18px Arial, sans-serif;
+    color: rgb(233, 230, 230);
+    margin: 0;
+}
+.box h4{
+
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left:0;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(96, 107, 110);
+      
+}
+.text{
+    transition: .5s ease;
+    opacity: 0;
+    vertical-align: middle;
+}
+
+.box:hover .image {
+    opacity: 0.3;
+}
+
+.box:hover .overlay,.text {
+    opacity:1;
+}
+
+@media (min-width: 900px) {
+    #columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+/*#columns:hover .box:not(:hover) {
+    opacity: 0.8;
+}*/
+
