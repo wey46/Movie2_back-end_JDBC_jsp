@@ -40,6 +40,7 @@
                     var mvlist = xmlhttp.responseXML.getElementsByTagName("movie");
                     for (var i = 0; i < mvlist.length; i++) {
                         var amv = mvlist[i];
+                        var mid = mvlist[i].childNodes[0].innerHTML;
                         var mtitle = amv.childNodes[1].firstChild.nodeValue;//u
                         var myear = amv.childNodes[2].innerHTML;//u
                         var msrch = amv.childNodes[3].innerHTML;//u
@@ -76,10 +77,16 @@
                         //overview+link
                         var hid = document.createElement("div");
                         hid.setAttribute("class", "overlay");
+                        var hidbut = document.createElement("a");
+                        hidbut.setAttribute("class","btn");
+                        hidbut.setAttribute("href","/movie.jsp/?MovieId="+mid);
+                        hidbut.appendChild(document.createTextNode("iMovie"));
+                        hidbut.appendChild(document.createElement("span"));
                         var hidtx = document.createElement("span");
                         hidtx.setAttribute("class","text");
                         hidtx.appendChild(document.createTextNode(moverview));
                         hid.appendChild(hidtx);
+                        hid.appendChild(hidbut);
                         //attaching
                         show.appendChild(img);
                         show.appendChild(mvtt);

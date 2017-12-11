@@ -117,14 +117,14 @@ h1 {
     text-align:center;  
 }
 .text{
-    
+    font-weight: 700;
     display: flex;
     justify-content: center; 
     align-items: center;
-    padding: 15px;
+    padding: 15px 15px 10px 15px;
     transition: .5s ease;
     opacity: 0;
-    height: 90%;
+    height: 70%;
     overflow: auto;
 }
 
@@ -135,6 +135,47 @@ h1 {
 .box:hover .overlay,.text {
     opacity:0.9;
 }
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: #3f8376;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100px;
+    padding: 12px;
+    transition: all 0.5s;
+    cursor: pointer;
+    vertical-align:middle;
+    text-decoration: none;
+  }
+  
+  .btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .btn span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .btn:hover span {
+    padding-right: 25px;
+  }
+  
+  .btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
 
 @media (min-width: 900px) {
     #columns {
