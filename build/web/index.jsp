@@ -13,6 +13,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="RecPageSS.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Recommendations</title>
         <% String UserId = request.getParameter("UserId");%> 
@@ -65,7 +66,7 @@
 
                         var mvtt = document.createElement("h4");//title
                         var icon = document.createElement("i");
-                        icon.setAttribute("class","fa fa-camera-retro fa-lg");
+                        icon.setAttribute("class","fa fa-film fa-lg");
                         mvtt.appendChild(icon);
                         mvtt.appendChild(document.createTextNode(" "+mtitle));
                         var mvinfo = document.createElement("p");//yaer+duration
@@ -104,7 +105,3 @@
         </div>
     </body>
 </html>
-<!--
-display: flex;
-justify-content: center; /* align horizontal */
-align-items: center; -->
